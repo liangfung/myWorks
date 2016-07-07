@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>1</title>
+	<style>
+		ul,p,h2 {
+			padding: 0;
+			margin: 0;
+		}
+		li {
+			list-style: none;
+		}
+		.fl {
+			float: left;
+		}
+		.cf {
+			zoom: 1;
+		}
+		.cf:after {
+			content: '';
+			height: 0;
+			display: block;
+			visibility: hidden;
+			clear: both;
+		}
+		.container {
+			background-color: #e7e7e7;
+			width: 970px;
+			height: 342px;
+			box-sizing: border-box;
+			padding: 5px;
+		}
+		#list {
+			width: 148px;
+			height: 100%;
+		}
+		#list>li {
+			width: 100%;
+			height: 80px;
+			line-height: 80px;
+			text-align: center;
+			cursor: pointer;
+		}
+		#list>li.active {
+			background-color: #fff;
+		}
+		#content {
+			width: 810px;
+			height: 100%;
+		}
+		#content div {
+			display: none;
+			width: 100%;
+			height: 100%;
+			position: relative;
+		}
+		#content div.active {
+			display: block;	
+		}
+		#content div img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 810px;
+			height: 332px;
+			z-index: 10;
+		}
+		#content>div ul {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			height: 30px;
+			z-index: 20;
+		}
+		#content>div ul li {
+			float: left;
+			background-color: rgba(0,0,0,.7);
+			width: 201.5px;
+			height: 30px;
+			line-height: 30px;
+			color: #fff;
+			text-align: center;
+			margin-right: 1px;
+			cursor: pointer;
+		}
+		#content>div ul li.active {
+			background-color: rgba(239,49,99,.7);
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<ul id="list" class="fl cf">
+			<li class="active">最热团购</li>
+			<li>商场特惠</li>
+			<li>名品推荐</li>
+			<li>缤纷活动</li>
+		</ul>
+		<div id="content" class="fl cf">
+			<div class="active">
+				<img src="img/1.jpg">
+				<ul>
+					<li class="active">1</li>
+					<li>2</li>
+					<li>3</li>
+					<li>4</li>
+				</ul>
+			</div>
+			<div>
+				<img src="img/2.jpg">
+				<ul>
+					<li class="active">1</li>
+					<li>2</li>
+				</ul>
+			</div>
+			<div>
+				<img src="img/3.jpg">
+				<ul>
+					<li class="active">1</li>
+					<li>2</li>
+					<li>3</li>
+				</ul>
+			</div>
+			<div>
+				<img src="img/4.jpg">
+				<ul>
+					<li class="active">1</li>
+					<li>2</li>
+					<li>3</li>
+					<li>4</li>
+					<li>5</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+<script>
+	var ul1 = document.getElementById('list');
+	var aLi1 = ul1.getElementsByTagName('li');
+	var con = document.getElementById('content');
+	var aDiv = con.getElementsByTagName('div');
+	var ul2 = con.getElementsByTagName('ul');
+	var aImg = con.getElementsByTagName('img');
+	var aImg_src = [
+						['img/1.jpg','img/5.jpg','img/6.jpg','img/7.jpg'],
+						['img/2.jpg','img/8.jpg'],
+						['img/3.jpg','img/9.jpg','img/10.jpg'],
+						['img/4.jpg','img/11.jpg','img/12.jpg','img/13.jpg','img/14.jpg']
+					];
+	var timer = null;
+
+	li_hover( 0 );
+	
+	for(var i = 0;i<aLi1.length;i++){
+		aLi1[i].index = i;
+		aLi1[i].onclick = function(){
+			for(var j = 0;j<aLi1.length;j++) {
+				aLi1[j].className = '';
+			}
+		this.className = 'active';
+		tab(this.index);
+		li_hover(this.index);
+		}
+	}
+	function tab( a ) {
+		var aLi2 = ul2[a].getElementsByTagName('li');
+		var len = parseInt(810 - aLi2.length)/aLi2.length;		
+		for(var i = 0;i<aLi1.length;i++){
+			aDiv[i].className = '';
+		}
+		aDiv[a].className = 'active';
+		for(var i = 0;i<aLi2.length;i++){	
+			aLi2[i].style.width = len + 'px';
+		}
+	}
+	
+	function li_hover( a ){
+		var aLi2 = ul2[a].getElementsByTagName('li');
+		for(var i = 0;i<aLi2.length;i++){
+			aLi2[i].index = i;
+			aLi2[i].onmouseover = function(){
+				for(var j = 0;j<aLi2.length;j++){
+					aLi2[j].className='';
+				}
+				this.className = 'active';
+				aImg[a].src = aImg_src[a][this.index];
+			}
+		}
+	}
+</script>	
+</body>
+</html>
