@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>评分系统</title>
+	<style>
+		body,ul,li,p {
+			padding: 0;
+			margin: 0;
+		}
+		li {
+			list-style: none;
+		}
+		.container {
+			margin-top: 30px;
+			position: relative;
+		}
+		#tt {
+			display: inline-block;
+			height: 40px;
+			line-height: 40px;
+		}
+		#list {
+			display: inline-block;
+		}
+		#list li {
+			float: left;
+			width: 30px;
+			height: 30px;
+			border: 5px solid #eee;
+		}
+		#list li.aclass {
+			background-color: #f60;
+		}
+		#list li.bclass {
+			background-color: #bbb;
+		}
+		#pp {
+			display: none;
+			display: inline-block;
+			height: 40px;
+			line-height: 40px;
+			color: #f60;
+			font-weight: bolder;
+		}
+		#pf {
+			position: absolute;
+			top: 0;
+			left: 300px;
+			width: 160px;
+			background-color: yellow;
+			padding: 3px;
+		}
+		.sum {
+			margin-top: 50px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<p id="tt">评价：</p>
+		<ul id="list">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<p id="pp"></p>
+		<div id="pf">提示：点击小方块就能评分，可以重复评分</div>
+		<div class="sum">PS:不同的评分有不同的颜色，评分差时为灰色,可以重复评分（没有星星素材，暂时用方块代替）</div>
+	</div>
+
+<script>
+
+
+/*
+1.未点击时，鼠标移开的时候，样式清空；
+2.点击后，再次鼠标移入，当鼠标移开，样式不清空，复原。
+
+
+重点：1.添加onOff判断是否已经点击；
+      2.使用自定义属性储存点击后的样式，以便复原；
+      3.声明一个str储存判断结果
+
+ */
+
+
+	var oUl = document.getElementById('list');
+	var aLi = oUl.getElementsByTagName('li');
+	var oPp = document.getElementById('pp');
+	var oPf = document.getElementById('pf');
+	var onOff = true;
+	var str;
+
+	aLi[0].com = '很差';
+	aLi[1].com = '较差';
+	aLi[2].com = '一般';
+	aLi[3].com = '很好';
+	aLi[4].com = '非常好';
+	
+	function aa(){
+		oPf.style.display = 'none';
+		oPp.style.display = 'inline-block';
+	}
+	function ab(){
+		if(onOff){
+			oPf.style.display = 'block';
+			oPp.style.display = 'none';
+		} else {
+			oPf.style.display = 'none';
+			oPp.style.display = 'inline-block';
+		}
+		
+	}
+	oUl.onmouseover = aa;
+	oUl.onmouseout = ab;
+
+	for (var i = 0;i<aLi.length;i++){
+		aLi[i].index = i;
+		aLi[i].className = '';
+		aLi[i].cc = aLi[i].className;
+		aLi[i].onmouseover = function (){
+			oPp.innerHTML =  this.com;
+			light(this.index);
+		}
+		aLi[i].onmouseout = function(){
+			if(onOff){
+				can();
+			} else {
+				for (var i = 0;i<aLi.length;i++) {
+					aLi[i].className = aLi[i].cc;
+				}
+				oPp.innerHTML =  str;
+			}
+		}
+		aLi[i].onclick = function (){
+			str =  this.com;
+			light(this.index);
+			onOff = false;
+			for (var j = 0;j<aLi.length;j++) {
+				aLi[j].cc = aLi[j].className;
+			}
+			
+		}
+	}
+
+	function light( num ){
+		for( var i = 0;i<num+1;i++ ){
+			if(num<2){
+				aLi[i].className = 'bclass';
+			} else {
+				aLi[i].className = 'aclass';
+			}		
+		}
+		for(var i = num + 1;i<aLi.length;i++){
+			aLi[i].className = '';
+		}
+	}
+	function can( ){
+		for(var i = 0;i<aLi.length;i++){
+				aLi[i].className = '';
+			} 	
+	}
+
+</script>		
+</body>
+</html>
