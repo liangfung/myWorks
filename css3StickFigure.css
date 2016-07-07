@@ -1,0 +1,356 @@
+@charset "utf-8";
+
+html,body {
+	padding: 0;
+	margin: 0;
+	height: 100%;
+}
+.container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateY(-30%) translateX(-50%);
+}
+.bodycontainer {
+	position: relative;
+	z-index: 99;
+}
+.body {
+	width: 346px;
+	height: 245px;
+	background-color: #fe0000;
+	border-top-left-radius: 40% 50%;
+	border-top-right-radius: 40% 50%;
+	border-bottom-left-radius: 40% 40%;
+	border-bottom-right-radius: 40% 40%;
+	
+}
+.mouthcontainer {
+	width: 225px;
+	height: 57px;
+	overflow: hidden;
+	position: absolute;
+	top: 80px;
+	left: 67px;
+	
+}
+.mouth {
+	box-sizing: border-box;
+	width: 224px;
+	height: 140px;
+	border: 10px #03000b solid;
+	border-bottom-left-radius: 45% 42%;
+	border-bottom-right-radius: 45% 42%;
+	position: relative;
+	top: -83px;
+	z-index: 101;
+}
+.eye1-container {
+	position: absolute;
+	top: -146px;
+	left: 17px;
+}
+.eye {
+	width: 129px;
+	height: 115px;
+	background-color: #fe0000;
+	border-top-left-radius: 50% 45%;
+	border-top-right-radius: 50% 45%;
+	border-bottom-left-radius: 50% 50%;
+	border-bottom-right-radius: 50% 50%;
+	position: relative;
+	z-index: 41;
+
+}
+.eye .eye-white {
+	background-color: #fff;
+	width: 93px;
+	height: 91px;
+	border-top-left-radius: 45% 50%;
+	border-top-right-radius: 45% 50%;
+	border-bottom-left-radius: 45% 50%;
+	border-bottom-right-radius: 45% 50%;
+	position: absolute;
+	top: 14px;
+	left: 17px;
+}
+.eye .eye-black {
+	background-color: #000;
+	width: 61px;
+	height: 58px;
+	border-top-left-radius: 45% 45%;
+	border-top-right-radius: 50% 50%;
+	border-bottom-left-radius: 40% 40%;
+	border-bottom-right-radius: 46% 43%;
+	position: absolute;
+	top: 22px;
+	left: 40px;
+	-webkit-animation: eye-black 1.5s ease infinite 0.15s;
+	-moz-animation: eye-black 1.5s ease infinite 0.15s;
+	-ms-animation: eye-black 1.5s ease infinite 0.15s;
+	animation: eye-black 1.5s ease infinite 0.15s;
+}
+    /*眼珠子的动画*/
+@-webkit-keyframes eye-black {
+	0%,100% {
+		position: absolute;
+		top: 22px;
+		left: 24px;
+	}
+	40% {
+		position: absolute;
+		top: 22px;
+		left: 44px;
+	}
+}
+@-moz-keyframes eye-black {
+	0%,100% {
+		position: absolute;
+		top: 22px;
+		left: 24px;
+	}
+	40% {
+		position: absolute;
+		top: 22px;
+		left: 44px;
+	}
+}
+@-o-keyframes eye-black {
+	0%,100% {
+		position: absolute;
+		top: 22px;
+		left: 24px;
+	}
+	40% {
+		position: absolute;
+		top: 22px;
+		left: 44px;
+	}
+}
+@keyframes eye-black {
+	0%,100% {
+		position: absolute;
+		top: 22px;
+		left: 24px;
+	}
+	40% {
+		position: absolute;
+		top: 22px;
+		left: 44px;
+	}
+}
+
+.eye .eye-light {
+	background-color: #fff;
+	width: 28px;
+	height: 25px;
+	border-top-left-radius: 45% 45%;
+	border-top-right-radius: 50% 50%;
+	border-bottom-left-radius: 40% 40%;
+	border-bottom-right-radius: 46% 43%;
+	position: absolute;
+	top: 31px;
+	left: 65px;
+	-webkit-animation: eye-light 1.5s ease infinite 0.15s;
+	-moz-animation: eye-light 1.5s ease infinite 0.15s;
+	-ms-animation: eye-light 1.5s ease infinite 0.15s;
+	animation: eye-light 1.5s ease infinite 0.15s;
+}
+  /*眼珠子亮光的动画*/
+@-webkit-keyframes eye-light {
+	0%,100% {
+		position: absolute;
+		top: 31px;
+		left: 30px;
+	}
+	40% {
+		position: absolute;
+		top: 31px;
+		left: 70px;
+	}
+}
+@-moz-keyframes eye-light {
+	0%,100% {
+		position: absolute;
+		top: 31px;
+		left: 30px;
+	}
+	40% {
+		position: absolute;
+		top: 31px;
+		left: 70px;
+	}
+}
+@-o-keyframes eye-light {
+	0%,100% {
+		position: absolute;
+		top: 31px;
+		left: 30px;
+	}
+	40% {
+		position: absolute;
+		top: 31px;
+		left: 70px;
+	}
+}
+@keyframes eye-light {
+	0%,100% {
+		position: absolute;
+		top: 31px;
+		left: 30px;
+	}
+	40% {
+		position: absolute;
+		top: 31px;
+		left: 70px;
+	}
+}
+.eye-link {
+	background-color: #fe0000;
+    box-sizing: border-box;
+    width: 27px;
+    height: 61px;
+    border-top-left-radius: 90% 70%;
+    border-top-right-radius: 10% 10%;
+    border-bottom-left-radius: 20% 20%;
+    border-bottom-right-radius: 22% 22%;
+    transform: rotate(-25deg);
+    position: absolute;
+    top: 100px;
+    left: 80px;
+    z-index: 40;
+}
+.eye2-container {
+	position: absolute;
+	top: -146px;
+	right: 7px;
+}
+.eye2-container .eye-link {
+	transform: scaleX(-1) rotate(-25deg);
+	position: absolute;
+    top: 104px;
+    left: 22px;
+}
+/*第一只脚*/
+.footcontainer-1 {
+    position: absolute;
+    top: 140px;
+    left: -43px;
+    transform: rotate(20deg);	
+}
+/*第二只脚*/
+.footcontainer-2 {
+    position: absolute;
+    top: 175px;
+    left: -22px;
+    transform: rotate(5deg);
+}
+/*第三只脚*/
+.footcontainer-3 {
+    position: absolute;
+    top: 189px;
+    left: 26px;
+    transform: rotate(-40deg);
+}
+/*右边的脚*/
+.footright {
+    position: absolute;
+    transform: scaleX(-1);
+    top: -6px;
+    right: -7px;
+}
+.foot {
+	position: relative;
+	z-index: 2;
+}
+.foot-1 {
+    background-color: #fe0000;
+    width: 97px;
+    height: 120px;
+    border-top-left-radius: 90% 67%;
+    border-top-right-radius: 6% 10%;
+    border-bottom-left-radius: 10% 10%;
+    border-bottom-right-radius: 22% 22%;
+}
+.foot-2 {
+	background-color: #fff;
+    width: 161px;
+    height: 178px;
+    border-top-left-radius: 59% 93%;
+    border-top-right-radius: 6% 10%;
+    border-bottom-left-radius: 10% 10%;
+    border-bottom-right-radius: 22% 22%;
+    position: absolute;
+    top: 9px;
+    left: 5px;
+}
+.pincer-container-l {
+    z-index: 30;
+    position: absolute;
+    top: -123px;
+    left: -160px;
+}
+.pincer-container-2 {
+    z-index: 30;
+    position: absolute;
+    top: -123px;
+    right: -160px;
+    transform: scaleX(-1);
+}
+.pincers {
+    width: 154px;
+    height: 182px;
+    background-color: #fe0000;
+    border-top-left-radius: 30% 45%;
+    border-top-right-radius: 30% 40%;
+    border-bottom-left-radius: 45% 56%;
+    border-bottom-right-radius: 45% 40%;
+    transform: rotate(-37deg)
+}
+.pincers-clip {
+    width: 0;
+    height: 0;
+    background-color: transparent;
+    border-top: transparent;
+    border-bottom: 100px solid #fff;
+    border-left: 60px transparent solid;
+    border-right: 60px transparent solid;
+    position: absolute;
+    top: 2px;
+    left: -7px;
+    transform: rotate(-217deg)
+}
+.pincers-link {
+    width: 50px;
+    height: 120px;
+    background-color: transparent;
+    position: relative;
+    top: -62px;
+    left: 136px;
+    transform: rotate(-54deg);
+    z-index: -1;
+    /*overflow: hidden;*/
+
+}
+.pincers-link1 {
+	background-color: #fe0000;
+    width: 103px;
+    height: 163px;
+    border-top-left-radius: 34% 43%;
+    border-top-right-radius: 50% 50%;
+    border-bottom-left-radius: 39% 43%;
+    border-bottom-right-radius: 50% 50%
+
+}
+.pincers-link2 {
+    background-color: #fff;
+    width: 110px;
+    height: 170px;
+    border-top-left-radius: 39% 72%;
+    border-top-right-radius: 50% 50%;
+    border-bottom-left-radius: 37% 43%;
+    border-bottom-right-radius: 50% 50%;
+    position: absolute;
+    top: -2px;
+    left: 27px;
+}

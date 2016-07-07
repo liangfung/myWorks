@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>土豪VS土豪</title>
+	<link rel="stylesheet" href="css/phone.css">
+</head>
+<body>
+	<div class="container">
+		<img src="img/phone.png" id="img1">
+		<div id="content">
+			<div id="top"></div>
+			<div class="bottom">
+				<span id="span1"><img id="user" src="img/user1.jpg"></span>
+				<input type="text" id="inp1">
+				<input type="button" id="btn" value="发送">
+			</div>
+		</div>
+	</div>
+<script>
+	
+	var arrImg = ['img/user1.jpg','img/user2.jpg'];
+	var oTop = document.getElementById('top');
+	var oUser = document.getElementById('user');
+	var oInp = document.getElementById('inp1');
+	var oBtn = document.getElementById('btn');
+	var oSpan = document.getElementById('span1');
+	var onOff = true;
+	
+	oUser.onclick = function() {
+		if(onOff) {
+			oUser.src = arrImg[1];
+			onOff = false;
+		} else {
+			oUser.src = arrImg[0];
+			onOff = true;
+		}
+	}
+	oBtn.onclick = function () {
+		if(!oInp.value) {
+			alert('发送内容不能为空');
+		} else if(onOff) {
+			// oTop.innerHTML = oSpan.innerHTML + oInp.value + '<br>' + oTop.innerHTML;
+			oTop.innerHTML = '<p class="cf mar-b5"><span class="fr">'+ oSpan.innerHTML+ '</span>'+ '<span class="fr bg-r">'+oInp.value + '</span></p>' + oTop.innerHTML;
+			oInp.value = '';
+		} else {
+			// oTop.innerHTML = oSpan.innerHTML + oInp.value + '<br>' + oTop.innerHTML;
+			oTop.innerHTML = '<p class="cf mar-b5"><span class="fl">'+ oSpan.innerHTML+ '</span>'+ '<span class="fl bg-l">'+oInp.value + '</span></p>' + oTop.innerHTML;
+			oInp.value = '';
+		}
+	} 
+</script>	
+</body>
+</html>

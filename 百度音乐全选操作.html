@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>QQ音乐反选</title>
+	<style>
+		ul,p,li,input {
+			padding: 0;
+			margin: 0;
+		}
+		li {
+			list-style: none;
+		}
+		.container {
+			width: 310px;
+		}
+		#list {
+			border-bottom: 1px solid #dedede;
+			
+		}
+		#list li { 
+			height: 30px;
+			line-height: 30px;
+			margin-bottom: 1px;
+			padding-left: 10px;
+		}
+		#list li span {
+			display: inline-block;
+			width: 150px;
+		}
+		#bottom {
+			height: 33px;
+			line-height: 33px;
+			border-bottom: 2px solid #4a4a4a;
+			padding-left: 10px;
+		}
+		#need {
+			display: inline-block;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<ul id="list">
+			<li>
+				<input type="checkbox">
+				<label>
+					<span>演员</span>
+					<em>薛之谦</em>
+				</label>
+			</li>
+			<li>
+				<input type="checkbox">
+				<label>
+					<span>丑八怪</span>
+					<em>薛之谦</em>
+				</label>
+			</li>
+			<li>
+				<input type="checkbox">
+				<label>
+					<span>刚刚好</span>
+					<em>薛之谦</em>
+				</label>
+			</li>
+			<li>
+				<input type="checkbox">
+				<label>
+					<span>你还要我怎样</span>
+					<em>薛之谦</em>
+				</label>
+			</li>
+			<li>
+				<input type="checkbox">
+				<label>
+					<span>绅士</span>
+					<em>薛之谦</em>
+				</label>
+			</li>
+			<li>
+				<input type="checkbox">
+				<label>
+					<span>演员</span>
+					<em>薛之谦</em>
+				</label>
+			</li>
+		</ul>
+		<div id="bottom">
+			<input type="checkbox" id="all">
+			<label for="all">全选</label>
+			<p id="need">
+				<!-- <input type="button" value="收藏">
+				<input type="button" value="添加">
+				<input type="button" value="删除"> -->
+				<button>收藏</button>
+				<button>添加</button>
+				<button>删除</button>
+			</p>
+		</div>
+	</div>
+
+<script>
+	var oUl = document.getElementById('list');
+	var aLi = oUl.getElementsByTagName('li');
+	var aInp = oUl.getElementsByTagName('input');
+	var oBtn = document.getElementById('all');
+	var aBtn = document.getElementsByTagName('button');
+	var arrColor = ['rgb(255, 217, 191)','#fff'];
+	var num = 0;
+	
+	check_btn_all();
+	check_btn();
+	for( var i=0;i<aLi.length;i++ ){
+		aLi[i].index = i;
+		aInp[i].index = i;
+		aLi[i].style.backgroundColor = arrColor[i%2];
+		aLi[i].bcolor = aLi[i].style.backgroundColor;
+		aLi[i].onmouseover = function (){	
+			this.style.backgroundColor = '#efefef';
+		}
+		aLi[i].onmouseout = function (){
+			color(this.index);
+		}
+		aInp[i].onclick = function(){
+			check_btn_all();
+			check_btn();
+		}
+	}
+	oBtn.onclick = function(){
+		check_btn_all();
+		if( num != aInp.length ){
+			for( var i=0;i<aLi.length;i++ ){
+				aInp[i].checked = true;
+				aLi[i].style.backgroundColor = '#efefef';
+			}
+			oBtn.checked = true;
+		} else {
+			for( var i=0;i<aLi.length;i++ ){
+				aInp[i].checked = false;
+				aLi[i].style.backgroundColor = aLi[i].bcolor;
+			}
+			oBtn.checked = false;
+		}
+		check_btn();
+	}
+	function color( a ){
+		if( aInp[a].checked ){
+			aLi[a].style.backgroundColor = '#efefef';
+		} else {
+			aLi[a].style.backgroundColor = aLi[a].bcolor;
+		}
+	}	
+	function check_btn_all(){
+		num = 0;
+		for( var i=0;i<aLi.length;i++ ) {
+			num += Number(aInp[i].checked);	
+		}
+		if( num == aInp.length ){
+			oBtn.checked = true;
+		} else {
+			oBtn.checked = false;
+		}
+	} 
+	
+	function check_btn(){
+		num = 0;
+		for( var i=0;i<aLi.length;i++ ) {
+			num += Number(aInp[i].checked);	
+		}
+		if( num == 0 ){
+			for(var j=0;j<aBtn.length;j++){
+				aBtn[j].disabled = true;
+			}
+		} else {
+			for(var j=0;j<aBtn.length;j++){
+				aBtn[j].disabled = false;
+			}
+		}
+	}
+
+</script>	
+</body>
+</html>

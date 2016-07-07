@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>QQ列表</title>
+	<style>
+		body,h2,ul {
+			padding: 0;
+			margin: 0;
+		}
+		li {
+			list-style: none;
+			cursor: pointer;
+		}
+		#list {
+			width: 240px;
+			margin: 20px auto 0;
+		}
+		#list h2 {
+			background: #A8A8FF url(img/js3/ico1.gif) 5px center no-repeat;
+			font-size: 20px;
+			height: 30px;
+			line-height: 30px;
+			text-indent: 20px;
+			cursor: pointer;
+		}
+		#list ul {
+			display: none;
+			padding: 5px 0;
+		}
+		#list ul li {
+			height: 25px;
+			line-height: 25px;
+			text-indent: 20px;
+		}
+		#list h2.active{
+			background: #A8FFD3 url(img/js3/ico2.gif) 5px center no-repeat;
+		}
+		/*#list ul li.active {
+			background-color: #F3DA6A;;
+		}*/
+		#list ul li.active {
+			background-color: #FDA971;
+		}
+	</style>
+</head>
+<body>
+	<ul id="list">
+		<li>
+			<h2>我的好友</h2>
+			<ul>
+				<li>张三</li>
+				<li>张三</li>
+				<li>张三</li>
+				<li>张三</li>
+			</ul>
+		</li>
+		<li>
+			<h2>未分组联系人</h2>
+			<ul>
+				<li>李四</li>
+				<li>李四</li>
+				<li>李四</li>
+				<li>李四</li>
+			</ul>
+		</li>
+		<li>
+			<h2>黑名单</h2>
+			<ul>
+				<li>隔壁老王</li>
+				<li>隔壁老王</li>
+				<li>隔壁老王</li>
+				<li>隔壁老王</li>
+			</ul>
+		</li>
+	</ul>
+
+<script>
+	var oUl = document.getElementById('list');
+	var aH2 = oUl.getElementsByTagName('h2');
+	var aUl = oUl.getElementsByTagName('ul');
+	var aLi = null;
+	var arrLi = [];
+	for(var i=0;i<aUl.length;i++){
+		aLi = aUl[i].getElementsByTagName('li');
+		for(var j=0;j<aLi.length;j++){
+			arrLi.push( aLi[j] );
+		}
+	}
+	for(var i=0;i<aH2.length;i++){
+		aH2[i].index = i;
+		aH2[i].onclick = function (){
+			if(this.className == 'active'){
+				aH2[this.index].className = '';
+				aUl[this.index].style.display = 'none';
+			} else {
+				for(var j=0;j<aH2.length;j++){
+					aH2[j].className = '';
+					aUl[j].style.display = 'none';
+				}
+				aH2[this.index].className = 'active';
+				aUl[this.index].style.display = 'block';
+			}
+			
+		}
+	}
+	for(var i=0; i<arrLi.length;i++){
+		arrLi[i].onclick = function(){
+			for(var j=0;j<arrLi.length;j++){
+				arrLi[j].className = '';
+			}
+			this.className = 'active';
+		}
+	}
+</script>	
+</body>
+</html>

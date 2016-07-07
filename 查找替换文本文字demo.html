@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>查找替换删除</title>
+	<style>
+		p,input,ul,h2 {
+			margin: 0;
+			padding: 0;
+		}
+		li {
+			list-style: none;
+		}
+		.container {
+			width: 700px;
+			height: 500px;
+			background-color: #eee;
+			margin: 30px auto 0;
+			padding: 10px;
+			position: relative;	
+		}
+		#text {
+			width:500px;
+			height: 300px;
+			background-color: #fff;
+			line-height: 1.5;
+			text-indent: 2em;
+			padding: 5px; 
+		}
+		#text span {
+			background-color: yellow;
+		}
+		#list {
+			position: absolute;
+			top: 30px;
+			right: 100px;
+		}
+		#list h2, #list li{
+			width: 70px;
+			height: 40px;
+			background-color: #666;
+			font-size: 16px;
+			text-align: center;
+			font-weight: normal;
+			line-height: 40px;
+			color: #fff;
+			cursor: pointer;
+		}
+		#list ul {
+			display: none;
+		}
+		#list ul.active {
+			display: block;
+		}
+		#list li {
+			margin-top: 5px;
+		}
+		#list li.active {
+			background-color: #f60;	
+		}
+		#pan {
+			width: 500px;
+			height: 150px;
+			border: 5px solid #9A499C;
+			background-color: #FBC8D7;
+			margin-top: 20px;
+			position: relative;
+			padding: 10px 20px;
+			box-sizing: border-box;
+			display: none;
+		}
+		#closeW {
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			width: 20px;
+			height: 20px;
+			line-height: 20px;
+			text-align: center;
+			font-weight: bolder;
+			cursor: pointer;
+		}
+		#fealist {
+			border-bottom: 2px solid #FF6868;
+			height: 30px;
+			margin-top: 20px;
+		}
+		#fealist li {
+			float: left;
+			width: 50px;
+			text-align: center;
+			height: 100%;
+			line-height: 30px;
+		}
+		#fealist li.active {
+			background-color: #FF6868;
+		}
+		#list li.hello {
+			background-color: red;
+		}
+		#pan div {
+			margin-top: 30px;
+			display: none;
+		}
+		#pan div input {
+			width: 150px;
+			height: 20px;
+			line-height: 20px;
+		}
+		#pan div.active {
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	
+<div class="container">
+	<p id="text">Web前端开发是从网页制作演变而来的，名称上有很明显的时代特征。在互联网的演化进程中，网页制作是Web1.0时代的产物，那时网站的主要内容都是静态的，用户使用网站的行为也以浏览为主。2005年以后，互联网进入Web2.0时代，各种类似桌面软件的Web应用大量涌现，网站的前端由此发生了翻天覆地的变化。网页不再只是承载单一的文字和图片，各种富媒体让网页的内容更加生动，网页上软件化的交互形式为用户提供了更好的使用体验，这些都是基于前端技术实现的。 以前会Photoshop和Dreamweaver就可以制作网页，现在只掌握这些已经远远不够了。无论是开发难度上，还是开发方式上，现在的网页制作都更接近传统的网站后台开发，所以现在不再叫网页制作，而是叫Web前端开发。</p>
+	<div id="list">
+		<h2 id="tt">展开</h2>
+		<ul>
+			<li>查找</li>
+			<li>替换</li>
+		</ul>
+	</div>
+	<div id="pan">
+		<span id="closeW">×</span>
+		<ul id="fealist">
+			<li>查找</li>
+			<li>替换</li>
+		</ul>
+		<div>
+			<input type="text">
+			<button>查找</button>
+		</div>
+		<div>
+			<input type="text">
+			<input type="text">
+			<button>替换</button>
+		</div>
+	</div>
+</div>
+
+
+<script>
+	var list = document.getElementById('list');
+	var text = document.getElementById('text');
+	var tt = document.getElementById('tt');
+	var oUl = list.getElementsByTagName('ul')[0];
+	var aLi = list.getElementsByTagName('li');
+	var pan = document.getElementById('pan');
+	var aDiv = pan.getElementsByTagName('div');
+	var pan_li = pan.getElementsByTagName('li');
+	var closeW = document.getElementById('closeW');
+	var aBtn = pan.getElementsByTagName('button');
+	var aInp = pan.getElementsByTagName('input');
+	var str = text.innerHTML;
+	var onOff = true;
+
+	tt.onclick = function(){
+		oUl.className == '' ? oUl.className = 'active' : oUl.className = '';
+	}
+	closeW.onclick = function(){
+		pan.style.display = 'none';
+	}
+	for(var i = 0;i<aLi.length;i++){
+		aLi[i].index = i;
+		aLi[i].onmouseover = function(){
+			aLi[0].className = '';
+			aLi[1].className = '';
+			this.className = 'active';
+		}
+		aLi[i].onclick = function (){
+			tab_li(this.index);
+		}
+	}
+	for(var i = 0;i<aDiv.length;i++) {
+		aDiv[i].index = i;
+		pan_li[i].index = i;
+		pan_li[i].onclick =function (){
+			tab_li(this.index);
+		}
+	}
+	aBtn[0].onclick = function(){
+		 var str1 = aInp[0].value;
+		 text.innerHTML = str;
+		 if(!aInp[0].value){
+		 	alert('请输入查找内容');
+		 } else if( str.split(str1).length == 1){
+		 	alert('对不起，找不到'+ str1);
+		 } else {
+		 	text.innerHTML = str.split(str1).join( '<span>'+ str1 +'</span>' );
+		 }
+	}
+	aBtn[1].onclick = function(){
+		var str1 = aInp[1].value;
+		var str2 = aInp[2].value;
+		if(onOff){
+			text.innerHTML = str;
+		}
+		if(!aInp[1].value){
+		 	alert('请输入要被替换内容');
+	 	} else if( str.split(str1).length == 1){
+		 	alert('对不起，找不到'+ str1);
+		 } else if(!aInp[2].value) {
+	 		alert('请输入替换的内容');
+	 	} else {
+	 		text.innerHTML = str.split(str1).join(str2);
+	 		onOff = false;
+	 	}
+	}
+
+	function tab_li(a){
+		oUl.className ='';
+		pan.style.display = 'block';
+		for(var j=0;j<aDiv.length;j++){
+			aDiv[j].className = '';
+			pan_li[j].className = '';
+		}
+		aDiv[a].className = 'active';
+		pan_li[a].className = 'active';
+	}
+</script>
+</body>
+</html>
