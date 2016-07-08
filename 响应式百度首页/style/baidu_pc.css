@@ -1,0 +1,213 @@
+@charset "utf-8";
+
+body,p,ul,li,img,h1 {
+	padding: 0;
+	margin: 0;
+}
+body {
+	font: 12px arial;
+}
+img {
+	vertical-align: middle;
+}
+html,body {
+	height: 100%;
+}
+.cf {
+	*zoom:1;
+}
+.cf:after {
+	content: '';
+	display: block;
+	clear: both;
+	height: 0;
+	visibility: hidden;
+	overflow: hidden;
+}
+.wrapper-mobile {
+	display: none;
+}
+	
+/*网页wrapper*/
+
+.wrapper-pc{
+	min-height: 500px;
+	min-width: 800px;
+	height: 642px;
+	position: relative;
+}
+.header {
+	overflow: hidden;
+	height: 48px;
+	position: relative;
+}
+.topnav {
+	float: right;
+	margin: 19px 0 5px 0;
+	position: relative;
+	overflow: hidden;
+}
+.topnav a {
+	display: inline-block;
+	_zoom:1;
+	*zoom:1;
+	*display:inline;
+	color: #333;
+	margin-left: 20px;	
+	line-height: 24px;
+	font-size: 13px;
+}
+.topnav a.mnav {
+	font-weight: bold;
+}
+.topnav a.mnav:hover, 
+.topnav a.lb:hover {
+	color: #00c;
+}
+.topnav a.more-product {
+	background-color: #38f;
+	color: #fff;
+	text-decoration: none;
+	width: 60px;
+	text-align: center;
+	margin-right: 10px;
+}
+.content {
+	text-align: center;
+}
+.content form {
+	margin-top: 22px;
+}
+.logo img {
+	width: 270px;
+	height: 129px;
+	vertical-align: middle;
+}
+.search {
+	font-size: 0;
+}
+.search-content {
+	position: relative;
+	display: inline-block;
+}
+/*搜索输入框*/
+.searchbox {
+	width: 539px;
+	height: 32px;
+	font:16px/18px arial;
+	outline: none;
+	border: 1px solid #b8b8b8;
+	padding-left: 7px;
+	line-height: 32px;
+	vertical-align: middle;
+}
+.searchbox:hover {
+	border: 1px solid #999;
+}
+.searchbox:focus {
+	border: 1px solid #2d78f4;
+}
+/*搜图按钮*/
+.soutu-btn {
+	display: block;
+	background-color: #fff;
+	background: url(../images/soutu_icons.png) -229px 0 no-repeat;
+	width: 18px;
+	height: 16px;
+	position: absolute;
+	top: 50%;
+	right: 11px;
+	margin-top: -8px;
+	cursor: pointer;
+}
+.soutu-btn:hover {
+	background: url(../images/soutu_icons.png) -229px -21px no-repeat;
+}
+/*百度一下按钮*/
+.s-btn {
+	width: 100px;
+	height:36px;
+	background-color: #3385ff;
+	border: 1px solid #2d78f4;
+	color: #fff;
+	font-size: 15px;
+	/*vertical-align: top;*/
+	cursor: pointer;
+	vertical-align: middle;
+}
+.s-btn:hover {
+	background-color: #317ef3;
+	box-shadow: 1px 1px 1px #ccc;
+}
+#footer {
+	position: absolute;
+	bottom: 23px;
+	width: 100%;
+	text-align: center;
+}
+.footerwrap {
+	overflow: hidden;
+	height: 100px;
+	min-width: 800px;
+	/*text-align: center;*/
+}
+/*底部二维码*/
+.footerwrap .qrcode {
+	display: inline-block;
+	_zoom:1;
+	*zoom:1;
+	*display:inline;
+	overflow: hidden;
+	margin: 5px 33px 0 0;
+}
+.footerwrap .qrcode img {
+	width: 60px;
+	height: 60px;
+	float: left;
+}
+/*底部二维码的文字部分*/
+.footerwrap .qrcode .codetext {
+	float: left;
+	line-height: 23px;
+	margin: 8px 0 0 10px;
+}
+.footerwrap .codetext p {
+	font-weight: bold;
+	color: #666;
+}
+.footerwrap .codetext span {
+	color: #999;
+}
+/*底部右侧信息*/
+.footerwrap .foottext {
+	display: inline-block;
+	_zoom:1;
+	*zoom:1;
+	*display:inline;
+	color: #999;
+	text-align: left;
+	vertical-align: top;
+	line-height: 22px;
+}
+.foottext a {
+	color: #999;
+}
+.foottext-1 a.behind {
+	margin-left: 62px;
+}
+/*其中两个带图标的文字*/
+.foottext .foot-icon1,.foottext .foot-icon2 {
+	width: 14px;
+	height: 17px;
+	display: inline-block;
+	margin: 2.5px 0; 
+	vertical-align:middle;
+}
+.foottext .foot-icon1 {
+	background: url(../images/icons.png) -600px -96px no-repeat;
+}
+.foottext .foot-icon2 {
+	background: url(../images/icons.png) -623px -96px no-repeat;
+}
+
+

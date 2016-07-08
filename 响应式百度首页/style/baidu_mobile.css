@@ -1,0 +1,264 @@
+/*手机wrapper*/
+@charset "utf-8";
+
+body,p,ul,li,img,h1 {
+    padding: 0;
+    margin: 0;
+}
+body {
+    font: 12px arial;
+}
+img {
+    vertical-align: middle;
+}
+html,body {
+    height: 100%;
+}
+ul,li {
+    list-style: none;
+}
+.cf {
+    *zoom:1;
+}
+.cf:after {
+    content: '';
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+    overflow: hidden;
+}
+.wrapper-pc {
+        display:none; 
+    }
+.wrapper-mobile div,.wrapper-mobile input,.wrapper-mobile button,
+.wrapper-mobile p,.wrapper-mobile embed,.wrapper-mobile a,.wrapper-mobile li
+{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.wrapper-mobile {
+	width: 100%;
+	background-color: #eeeff0;
+}
+#userInfo {
+	height: 54px;
+}
+.logo-m {
+	text-align: center;
+	padding: 17px 0 15px 0;
+}
+.logo-m img {
+	width: 175px;
+	height: 55px;
+}
+#search-m {
+	margin: 0 10px;
+	position: relative;
+}
+#search-m .searchbox-m {
+    padding: 7px 82px 7px 6px;
+    height: 44px;
+    line-height: 28px;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 0;
+    font-size: 18px;
+}
+#search-m .searchbox-m:focus ~ .sound {
+    display: none;
+}
+#search-m .search-btn-m {
+	width: 82px;
+	height: 44px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #38f;
+    color: #fff;
+    white-space: nowrap;
+    line-height: 42px;
+    letter-spacing: -1px;
+    font-size: 16px;
+    border-top: 1px solid #38f;
+    border-bottom: 1px solid #38f;
+    border-left: 0;
+    border-right: 0;
+    outline: none;
+    box-sizing: border-box;
+    border-radius: 1px;
+}
+#search-m .sound {
+    display: block;
+    width: 39px;
+    height: 44px;
+    position: absolute;
+    top: 0px;
+    right:82px;
+    line-height: 44px;
+}
+#search-m .sound span.mac {
+    display: inline-block;
+    float: left;
+    width: 13px;
+    height: 20px;
+    background: url(../images/mmsicon.png) 0 0 no-repeat;
+    -webkit-background-size: 33px 19px;
+    background-size: 33px 19px;
+    margin-top: 11px;
+}
+#search-m .sound span.triangle-m {
+    float: left;
+    height: 0;
+    width: 0;
+    border: 4px solid transparent;
+    border-top-color: #717077;
+    margin-top: 18px;
+    margin-left: 5px;
+}
+#navs-m {
+	height: 52px;
+	margin: 17px 0 14px 0;
+    padding-bottom: 10px;
+}
+#navs-m .nav-item {
+	width: 16.5%;
+	height: 42px;
+    text-align: center;
+    float: left;
+}
+#navs-m .nav-item a {
+    color: #666;
+    font-size: 12px;
+    text-decoration: none;
+}
+#navs-m>.nav-item:nth-child(1) {
+    margin-left: 1%;
+}
+#navs-m>.nav-item:nth-child(6) {
+    margin-right: 1%;
+}
+.nav-item a embed {
+    display: block;
+    margin: 0 auto 4px;
+    padding: 2px;
+    color: #666;
+}
+.nav-item a embed.nav-video {
+    padding: 0;
+}
+.plus-card {
+    padding: 0 8px;
+    margin-bottom: 10px;
+}
+
+/*通用标题*/
+.plus-card .plus-title {
+    background-color: #fff;
+    position: relative;
+    margin: 2px 14px 0;
+    height: 40px;
+    text-align: left;
+}
+.plus-card .plus-title h2 {
+    line-height: 40px;
+    font-size: 15px;
+    font-weight: normal;
+    color: #999;
+}
+.plus-card .plus-title a {
+    float: right;
+    height: 40px;
+    padding: 10px 0 10px;
+}
+.plus-card .plus-title .line {
+    float: right;
+    line-height: 40px;
+    color: #f0f0f0;
+    font-size: 14px;
+    margin: 0 5px 0 10px;
+}
+.plus-card .plus-title .change {
+    float: right;
+}
+.plus-card .plus-title .change-text {
+    display: block;
+    float: right;
+    line-height: 22px;
+    text-decoration: none;
+}
+.plus-footer {
+    height: 43px;
+    border-top: 1px solid #f4f5f6;
+}
+.plus-footer-t {
+    line-height: 42px;
+    text-align: right;
+    
+}
+.plus-footer-t a {
+    display: block;
+    padding-right: 14px;
+    line-height: 42px;
+}
+.plus-footer-t span {
+    color: #0058d3;
+}
+.plus-footer-t embed {
+    padding-top: 2px;
+}
+
+/*end 通用标题*/
+.plus-card a {
+    color: #262626;
+    font-size: 14px;
+    text-decoration: none;
+}
+#myNav {
+    background-color: #fff;
+}
+#myNav .mynav-list li {
+    float: left;
+    width: 25%;
+    padding: 0 6px;
+    height: 42px;
+    line-height: 42px;
+    text-align: center;
+}
+#myNav .mynav-list li a {
+    text-decoration: none;
+    color: #262626;
+    display: block;
+}
+#myNav .mynav-list li.plus a {
+    padding-top: 5px;
+}
+#hot-news {
+    background-color: #fff;
+    margin-top: 8px;
+}
+.hot-list {
+    padding: 0 14px;
+    width: 100%;
+    margin-top: 5px;
+}
+.hot-list ul li {
+    width: 50%;
+    height: 42px;
+    float: left;
+}
+#copyright {
+    margin-top: 6px;
+    padding-bottom: 5px;
+}
+#copyright p {
+    font-size: 12px;
+    height: 20px;
+    line-height: 20px;
+    color: #999;
+    text-align: center;
+}

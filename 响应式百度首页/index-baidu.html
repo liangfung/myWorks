@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
+	<title>百度一下，你就知道</title>
+	<link rel="stylesheet" href="style/baidu_pc.css" media="screen and (min-width: 768px)">
+	<link rel="stylesheet" href="style/baidu_mobile.css" media="screen and (max-width: 767px)">
+	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+	<!--[if IE 6]>
+		<style>
+			body {behavior: url("csshover.htc");}
+		</style>
+	<![endif]-->
+</head>
+<body>
+<div class="wrapper-pc cf">
+	<div class="header">
+		<!-- 顶部导航 -->
+		<div class="topnav">
+				<a href="http://www.nuomi.com/?cid=002540" class="mnav">糯米</a>
+				<a href="http://news.baidu.com/" class="mnav">新闻</a>
+				<a href="https://www.hao123.com/" class="mnav">hao123</a>
+				<a href="http://map.baidu.com/" class="mnav">地图</a>
+				<a href="http://map.baidu.com/" class="mnav">视频</a>
+				<a href="http://tieba.baidu.com/" class="mnav">贴吧</a>
+				<a href="https://passport.baidu.com/v2/?login&tpl=mn&u=http%3A%2F%2Fwww.baidu.com%2F" class="lb">登录</a>
+				<a href="javascript:;" class="setting">设置</a>
+				<a href="javascript:;" class="more-product">更多产品</a>
+		</div>
+	</div>
+	<!-- 主体部分 -->
+	<div class="content">
+		<div class="logo">
+			<img src="images/bd_logo1.png" alt="百度一下">
+		</div>
+		<!-- 搜索框 -->
+		<form action="https://www.baidu.com/s" method="get" target="_blank" class="search">
+			<span class="search-content">
+				<input type="text" name="wd" class="searchbox">
+			<!-- 搜图按钮 -->
+				<span class="soutu-btn"></span>	
+			<!--  end 搜图按钮 -->		
+			</span>
+			<button type="submit" class="s-btn">百度一下</button>
+		</form>
+		
+		<!-- end 搜索框 -->
+	</div>
+	<div id="footer" class="cf">
+		<div class="footerwrap">
+			<!-- 两个二维码 -->
+			<div class="qrcode">
+				<img src="images/zbios_62c636fe.png" alt="手机百度">
+				<div class="codetext">
+					<p>手机百度</p>
+					<span>快人一步</span>
+				</div>
+			</div>
+			<div class="qrcode">
+				<img src="images/nuomi_510f7472.png" alt="百度糯米">
+				<div class="codetext">
+					<p>百度糯米</p>
+					<span>一元大餐</span>
+				</div>
+			</div>
+			<!-- end 两个二维码 -->
+			<!-- 底部右侧的信息 -->
+			<div class="foottext">
+				<p class="foottext-1">
+					<a href="https://www.baidu.com/cache/sethelp/help.html">把百度设为主页</a>
+					<a href="http://home.baidu.com/" class="behind">关于百度</a>
+					<a href="http://ir.baidu.com/" class="behind">About  Baidu</a>
+				</p>
+				<p class="foottext-2">
+					<span>©2016 Baidu</span>
+					<a href="http://www.baidu.com/duty/">使用百度前必读</a>
+					<a href="http://jianyi.baidu.com/">意见反馈</a>
+					<span>京ICP证030173号</span>
+					<span class="foot-icon1"></span>
+				</p>
+				<p class="foottext-3">
+					<span class="foot-icon2"></span>
+					<span>北京公网安备11000002000001号</span>
+				</p>
+			</div>
+		</div>
+	</div>	
+</div>
+
+<div class="wrapper-mobile cf">
+	<div id="userInfo"></div>
+	<div class="logo-m">
+		<img src="images/plus_logo.png" alt="百度一下">
+	</div>
+	<div id="search-m">
+		<form action="https://www.baidu.com/s" method="get" target="_blank">
+			<input type="text" class="searchbox-m">
+			<button type="submit" class="search-btn-m">百度一下</button>
+			<a href="#" class="sound">
+				<span class="mac"></span>
+				<span class="triangle-m"></span>
+			</a>
+		</form>
+	</div>
+	<div id="navs-m">
+		<div class="cf">
+			<div class="nav-item">
+				<a href="#">
+					<embed src="images/news.svg" width="24" height="24" type="image/svg+xml">
+					<span>新闻</span>
+				</a>
+			</div>
+			<div class="nav-item">
+				<a href="#">
+					<embed src="images/book.svg" width="24" height="24" type="image/svg+xml">
+					<span>小说</span>
+				</a>
+			</div>
+			<div class="nav-item">
+				<a href="#">
+					<embed src="images/vedio.svg" width="24" height="24" type="image/svg+xml" class="nav-video">
+					<span>视频</span>
+				</a>
+			</div>
+			<div class="nav-item">
+				<a href="#">
+					<embed src="images/nuomi.svg" width="24" height="24" type="image/svg+xml">
+					<span>糯米</span>
+				</a>
+			</div>
+			<div class="nav-item">
+				<a href="#">
+					<embed src="images/ditu.svg" width="24" height="24" type="image/svg+xml">
+					<span>地图</span>
+				</a>
+			</div>
+			<div class="nav-item">
+				<a href="#">
+					<embed src="images/more.svg" width="24" height="24" type="image/svg+xml">
+					<span>更多</span>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="plus-card">
+		<div id="myNav">
+			<div class="plus-title">
+				<a href="#"><embed src="images/dot.svg" width="20" height="20" type="image/svg+xml"></a>
+				<h2>我的导航</h2>
+			</div>
+			<div class="mynav-list cf">
+				<ul>
+					<li><a href="#">资讯</a></li>
+					<li><a href="#">hao123</a></li>
+					<li><a href="#">图片</a></li>
+					<li><a href="#">爱奇艺</a></li>
+					<li><a href="#">美女</a></li>
+					<li><a href="#">音乐</a></li>
+					<li><a href="#">笑话</a></li>
+					<li class="plus">
+						<a href="#"><embed src="images/add.svg" width="20" height="20" type="image/svg+xml"></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div id="hot-news">
+			<div class="plus-title">
+				<a href="#"><embed src="images/dot.svg" width="20" height="20" type="image/svg+xml"></a>
+				<span class="line">|</span>
+				<a href="#" class="change">
+					<embed src="images/refresh.svg" width="20" height="20" type="image/svg+xml">
+					<span class="change-text">换一批</span>
+				</a>
+				<h2>实时热点</h2>
+			</div>
+			<div class="hot-list">
+				<ul class="cf">
+					<li>
+						<a href="#">德国机场航班暂停</a>
+					</li>
+					<li style="padding-left: 12px;">
+						<a href="#">新疆叶城泥石流</a>
+					</li>
+					<li>
+						<a href="#">林心如婚讯后发文</a>
+					</li>
+					<li style="padding-left: 12px;">
+						<a href="#">papi酱晒毕业照</a>
+					</li>
+					<li>
+						<a href="#">叶璇手撕王思聪</a>
+					</li>
+					<li style="padding-left: 12px;">
+						<a href="#">法国2:0晋级决赛</a>
+					</li>
+				</ul>
+			</div>
+			<div class="plus-footer">
+				<div class="plus-footer-t">
+					<a href="#">
+						<span>百度风云榜</span>
+						<embed src="images/footer-more.svg" width="12" height="12" type="image/svg+xml">
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
